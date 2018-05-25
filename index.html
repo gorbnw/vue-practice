@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js intro</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js">
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="message"><br />
+      {{ message }}
+
+      <ul>
+        <li v-for="dog in dogs">{{ dog }}</li>
+      </ul>
+
+      <button v-on:click="buttonClick"> Click this </button>
+
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+            'message': 'Hello dogs',
+            'dogs': ['beebo', 'woofer', 'tuna']
+        },
+        methods: {
+          buttonClick: function(){
+            alert('You clicked!');
+          }
+        }
+      });
+    </script>
+
+  </body>
+</html>
