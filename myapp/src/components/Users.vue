@@ -26,23 +26,7 @@
         newUser: {
 
         },
-        users: [
-          {
-            name: 'Peter Piper',
-            email: 'pp@gmail.com',
-            contacted: false
-          },
-          {
-            name: 'Dog Master',
-            email: 'dm@gmail.com',
-            contacted: false
-          },
-          {
-            name: 'Garry Larry',
-            email: 'gl@gmail.com',
-            contacted: false
-          },
-        ]
+        users: []
 
       }
     },
@@ -60,6 +44,12 @@
       }
 
     },
+    created: function(){
+      this.$http.get('https://jsonplaceholder.typicode.com/users')
+      .then(function(response){
+        this.users = response.data;
+      })
+    }
   }
 </script>
 
